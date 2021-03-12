@@ -1,1 +1,7 @@
 <p>home works!</p>
+<ul>
+  <app-show
+    *ngFor="let show of allGigResults"
+    [allGigResultsRef]="show"
+  ></app-show>
+</ul>

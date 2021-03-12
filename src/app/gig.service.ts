@@ -7,6 +7,7 @@ import { secret } from './secret';
 })
 export class GigService {
   predictHQEventsURL: string = 'https://api.predicthq.com/v1/events/';
+  baseURL: string = 'http://localhost:3000/diyshows';
 
   constructor(private http: HttpClient) {}
 
@@ -25,4 +26,15 @@ export class GigService {
       },
     });
   };
+
+  getDiyGig = (): any => {
+    console.log('whzzzzzzzup');
+
+    return this.http.get(this.baseURL);
+  };
+
+  //   getAllGigs = (): any => {
+  //     this.getGig();
+  //     this.getDiyGig();
+  //   };
 }
