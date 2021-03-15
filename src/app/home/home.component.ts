@@ -8,8 +8,6 @@ import { Show } from '../interfaces/show';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  gigResults: any = [];
-  diyGigResults: any = [];
   allGigResults: any = [];
 
   constructor(private gigService: GigService) {}
@@ -34,6 +32,15 @@ export class HomeComponent implements OnInit {
       console.log(this.allGigResults);
     });
   };
+
+  searchGig = (title: string): any => {
+    for (let i = 0; i < this.allGigResults.length; i++) {
+      if (this.allGigResults[i].title === title) {
+        return this.allGigResults[i];
+      }
+    }
+  };
+
   // getAndSetAllGigs = ():any => {
   //   this.allGigResults.push(this.gigResults);
   //   this.allGigResults.push(this.diyGigResults);

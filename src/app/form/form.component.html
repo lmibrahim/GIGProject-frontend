@@ -1,0 +1,12 @@
+<form #searchForm="ngForm" (ngSubmit)="emitTitle(searchForm)">
+  <label for="title">Search shows:</label>
+  <input type="text" name="title" id="title" ngModel />
+  <label for="show-type">Show Type:</label>
+  <select name="show-type" id="show-type" ngModel>
+    <option value="all">All shows</option>
+    <option value="public">DIY</option>
+    <option value="diy">Public</option>
+  </select>
+  <label for="date">Search by date:</label>
+  <input type="datetime-local" name="date" id="date" ngModel />
+</form>
