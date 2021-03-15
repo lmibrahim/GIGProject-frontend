@@ -11,6 +11,8 @@ import { Show } from '../interfaces/show';
 export class HomeComponent implements OnInit {
   allGigResults: any = [];
 
+  searchResult: string = '';
+
   constructor(private gigService: GigService) {}
 
   ngOnInit(): void {
@@ -34,25 +36,19 @@ export class HomeComponent implements OnInit {
     });
   };
 
-  // searchGig = (title: string): any => {
-  //   for (let i = 0; i < this.allGigResults.length; i++) {
-  //     if (this.allGigResults[i].title === title) {
-  //       return this.allGigResults[i];
-  //     }
-  //   }
+  //Sets search term to show title
+  setSearch = (form: NgForm): void => {
+    this.searchResult = form.form.value.title;
+  };
 
-  // getAndSetAllGigs = ():any => {
-  //   this.allGigResults.push(this.gigResults);
-  //   this.allGigResults.push(this.diyGigResults);
-  //   console.log(this.allGigResults);
-  // };
-
-  // getAndSetAllGigs()
-  searchGig = (title: NgForm): any => {
-    console.log(title.form.value.title);
-    if (title) {
+  //filtering show names
+  //"includes" is true/false. Doesnt need a ===
+  searchGig = (): any => {
+    if (this.searchResult) {
       return this.allGigResults.filter((item: any) => {
-        return item.title === title;
+        return item.title
+          .toLowerCase()
+          .includes(this.searchResult.toLowerCase().trim());
       });
     } else {
       return this.allGigResults;

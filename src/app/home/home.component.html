@@ -1,9 +1,12 @@
 <p>home works!</p>
-<app-form (titleEvent)="searchGig($event)"></app-form>
+<app-form (titleEvent)="setSearch($event)"></app-form>
+
 <!-- <google-map></google-map> -->
+
+<!-- //SearchGig method from home component -->
 <ul>
   <app-show
-    *ngFor="let show of allGigResults"
+    *ngFor="let show of searchGig()"
     [allGigResultsRef]="show"
   ></app-show>
 </ul>
