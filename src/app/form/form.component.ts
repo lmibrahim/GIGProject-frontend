@@ -7,9 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  @Input()
-  @Output()
-  titleEvent = new EventEmitter<NgForm>();
+  @Output() titleEvent = new EventEmitter<NgForm>();
   gigs: any = [];
   constructor(private gigService: GigService) {}
 
