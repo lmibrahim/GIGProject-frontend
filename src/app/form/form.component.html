@@ -1,13 +1,14 @@
 <form #searchForm="ngForm" (ngSubmit)="emitTitle(searchForm)">
   <label for="title">Search shows:</label>
   <input type="text" name="title" id="title" ngModel />
-  <label for="show-type">Show Type:</label>
-  <select name="show-type" id="show-type" ngModel>
+  <label for="showType">Show Type:</label>
+  <select name="showType" id="showType" ngModel>
     <option value="all">All shows</option>
-    <option value="public">DIY</option>
-    <option value="diy">Public</option>
+    <option value="diy">DIY</option>
+    <option value="public">Public</option>
   </select>
   <label for="date">Search by date:</label>
   <input type="date" name="date" id="date" ngModel />
+  <!-- <label for="place">Search by place:</label> -->
   <button>Submit</button>
 </form>
