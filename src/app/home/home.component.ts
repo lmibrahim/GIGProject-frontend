@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { GigService } from '../gig.service';
 import { Show } from '../interfaces/show';
 
@@ -33,13 +34,12 @@ export class HomeComponent implements OnInit {
     });
   };
 
-  searchGig = (title: string): any => {
-    for (let i = 0; i < this.allGigResults.length; i++) {
-      if (this.allGigResults[i].title === title) {
-        return this.allGigResults[i];
-      }
-    }
-  };
+  // searchGig = (title: string): any => {
+  //   for (let i = 0; i < this.allGigResults.length; i++) {
+  //     if (this.allGigResults[i].title === title) {
+  //       return this.allGigResults[i];
+  //     }
+  //   }
 
   // getAndSetAllGigs = ():any => {
   //   this.allGigResults.push(this.gigResults);
@@ -48,4 +48,14 @@ export class HomeComponent implements OnInit {
   // };
 
   // getAndSetAllGigs()
+  searchGig = (title: NgForm): any => {
+    console.log(title.form.value.title);
+    if (title) {
+      return this.allGigResults.filter((item: any) => {
+        return item.title === title;
+      });
+    } else {
+      return this.allGigResults;
+    }
+  };
 }
