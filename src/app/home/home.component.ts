@@ -11,6 +11,7 @@ import { Show } from '../interfaces/show';
 })
 export class HomeComponent implements OnInit {
   allGigResults: any = [];
+  filteredResults: any = [];
 
   searchResultTitle: string = '';
   searchResultType: string = '';
@@ -48,14 +49,49 @@ export class HomeComponent implements OnInit {
 
   //filtering show names
   //"includes" is true/false. Doesnt need a ===
-  searchGig = (): any => {
+  // searchGig = (): any => {
+  //   if (this.searchResultTitle) {
+  //     return this.allGigResults.filter((item: any) => {
+  //       return item.title
+  //         .toLowerCase()
+  //         .includes(this.searchResultTitle.toLowerCase().trim());
+  //     });
+  //   }
+  //   if (this.searchResultType === 'all') {
+  //     return this.allGigResults;
+  //   }
+  //   if (this.searchResultType === 'diy') {
+  //     return this.allGigResults.filter((item: any) => {
+  //       return item.diy;
+  //     });
+  //   }
+  //   if (this.searchResultType === 'public') {
+  //     return this.allGigResults.filter((item: any) => {
+  //       return item.brand_safe;
+  //     });
+  //   }
+  //   if (this.searchResultDate) {
+  //     return this.allGigResults.filter((item: any) => {
+  //       return item.start.includes(this.searchResultDate);
+  //     });
+  //   } else {
+  //     return this.allGigResults;
+  //   }
+  // };
+
+  filterSearch = (): any => {
     if (this.searchResultTitle) {
       return this.allGigResults.filter((item: any) => {
         return item.title
           .toLowerCase()
           .includes(this.searchResultTitle.toLowerCase().trim());
       });
+    } else {
+      return this.allGigResults;
     }
+  };
+
+  filterType = (): any => {
     if (this.searchResultType === 'all') {
       return this.allGigResults;
     }
@@ -68,12 +104,12 @@ export class HomeComponent implements OnInit {
       return this.allGigResults.filter((item: any) => {
         return item.brand_safe;
       });
+    } else {
+      return this.allGigResults;
     }
+  };
 
-    // return item.type.includes(diy)
-    // }
-    // console.log(this.searchResultType);
-    // item.diy ? item.diy : item.brand_safe
+  filterDate = (): any => {
     if (this.searchResultDate) {
       return this.allGigResults.filter((item: any) => {
         return item.start.includes(this.searchResultDate);
@@ -81,5 +117,47 @@ export class HomeComponent implements OnInit {
     } else {
       return this.allGigResults;
     }
+  };
+
+  updateSearch = () => {
+    console.log(`yooo`);
+    this.filteredResults = this.filterSearch();
+    return this.filteredResults;
+  };
+
+  updateType = () => {
+    this.filteredResults = this.filterType();
+    return this.filteredResults;
+  };
+
+  updateDate = () => {
+    this.filteredResults = this.filterDate();
+    return this.filteredResults;
+  };
+
+  //compares two arrays and only returns the matching result(s)
+  updatedResults = () => {
+    //taking in full array
+    let results = this.allGigResults;
+    if (this.searchResultTitle) {
+      //getting the filtered array and comparing it to the full arrray and returning matching objects (the filtered array comes from the updateSearch method)
+      results = results.filter((result: any) => {
+        return this.updateSearch().includes(result);
+      });
+    }
+    //getting the filtered array and comparing it to the full arrray and returning matching objects (the filtered array comes from the filter method used)
+    //if any previous filters went through then youre no longer going through the full array you are going through the previous filtered array (in this case the one that has the matching titles if that filter was ran)
+    if (this.searchResultType) {
+      results = results.filter((result: any) => {
+        return this.updateType().includes(result);
+      });
+    }
+    if (this.searchResultDate) {
+      results = results.filter((result: any) => {
+        return this.updateDate().includes(result);
+      });
+    }
+    //if none of the filters run then it will return the original full array (allGigResults)
+    return results;
   };
 }
