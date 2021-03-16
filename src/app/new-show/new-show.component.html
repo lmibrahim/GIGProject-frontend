@@ -1,0 +1,22 @@
+<form #newShow="ngForm" (ngSubmit)="onSubmit(newShow)">
+  <label for="title">Name of Show</label>
+  <input type="text" name="title" id="title" ngModel />
+
+  <label for="start">Show Time</label>
+  <input type="datetime-local" name="start" id="start" ngModel />
+
+  <label for="description"> Description</label>
+  <textarea
+    name="description"
+    id="description"
+    cols="30"
+    rows="10"
+    ngModel
+  ></textarea>
+
+  <label for="address">Address</label>
+  <input type="text" name="address" id="address" ngModel />
+
+  <button>Add Another Gig</button>
+  <button routerLink="/home">Submit</button>
+</form>

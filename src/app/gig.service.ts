@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { secret } from './secrets';
+import { Show } from './interfaces/show';
 
 @Injectable({
   providedIn: 'root',
@@ -31,6 +32,12 @@ export class GigService {
     console.log('whzzzzzzzup');
 
     return this.http.get(this.baseURL);
+  };
+
+  addShow = (show: Show): any => {
+    console.log(show);
+
+    return this.http.post(`${this.baseURL}`, show);
   };
 
   //   getAllGigs = (): any => {

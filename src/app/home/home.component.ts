@@ -1,6 +1,7 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GigService } from '../gig.service';
 import { Show } from '../interfaces/show';
 
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   searchResultType: string = '';
   searchResultDate: string = '';
 
-  constructor(private gigService: GigService) {}
+  constructor(private gigService: GigService, private router: Router) {}
 
   ngOnInit(): void {
     console.log('WORKIN');
@@ -46,38 +47,6 @@ export class HomeComponent implements OnInit {
     this.searchResultType = form.form.value.showType;
     this.searchResultDate = form.form.value.date;
   };
-
-  //filtering show names
-  //"includes" is true/false. Doesnt need a ===
-  // searchGig = (): any => {
-  //   if (this.searchResultTitle) {
-  //     return this.allGigResults.filter((item: any) => {
-  //       return item.title
-  //         .toLowerCase()
-  //         .includes(this.searchResultTitle.toLowerCase().trim());
-  //     });
-  //   }
-  //   if (this.searchResultType === 'all') {
-  //     return this.allGigResults;
-  //   }
-  //   if (this.searchResultType === 'diy') {
-  //     return this.allGigResults.filter((item: any) => {
-  //       return item.diy;
-  //     });
-  //   }
-  //   if (this.searchResultType === 'public') {
-  //     return this.allGigResults.filter((item: any) => {
-  //       return item.brand_safe;
-  //     });
-  //   }
-  //   if (this.searchResultDate) {
-  //     return this.allGigResults.filter((item: any) => {
-  //       return item.start.includes(this.searchResultDate);
-  //     });
-  //   } else {
-  //     return this.allGigResults;
-  //   }
-  // };
 
   filterSearch = (): any => {
     if (this.searchResultTitle) {
