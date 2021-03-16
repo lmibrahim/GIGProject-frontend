@@ -12,6 +12,9 @@ import { FormComponent } from './form/form.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { NewShowComponent } from './new-show/new-show.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DeetsComponent } from './deets/deets.component';
+import { AboutComponent } from './about/about.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DetailsPageComponent,
     NewShowComponent,
     PageNotFoundComponent,
+    DeetsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule,
     GoogleMapsModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

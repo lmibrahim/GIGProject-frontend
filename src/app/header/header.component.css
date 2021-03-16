@@ -1,0 +1,25 @@
+.navbar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.header {
+  margin: 0;
+  padding: 0;
+}
+.collapse {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}
