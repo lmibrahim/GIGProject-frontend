@@ -13,4 +13,8 @@ export class ShowComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  showDetails = (id: number) => {
+    this.router.navigate([`/deets/${id}`]);
+  };
 }

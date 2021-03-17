@@ -40,6 +40,21 @@ export class GigService {
     return this.http.post(`${this.baseURL}`, show);
   };
 
+  getTheGig = (id: string): any => {
+    return this.http.get(`${this.baseURL}/${id}`);
+  };
+
+  getTheOtherGig = (id: string): any => {
+    let params: any = {
+      id: id,
+    };
+    return this.http.get(`${this.predictHQEventsURL}`, {
+      params,
+      headers: {
+        Authorization: secret.authorization,
+      },
+    });
+  };
   //   getAllGigs = (): any => {
   //     this.getGig();
   //     this.getDiyGig();
