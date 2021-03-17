@@ -22,8 +22,17 @@ export class NewShowComponent implements OnInit {
     console.log('NEW SHOW??');
     console.log(form);
     let newShow: Show = form.form.value;
-    this.gigService.addShow(newShow).subscribe((response: any) => {
-      // form.reset();
-    });
+    // newShow.location = [0, 0];
+    this.gigService.geoCoding(form.form.value.address).subscribe((response:any)=>{
+      console.log(response);
+      console.log(response.results[0].geometry.location.lat);
+      console.log(response.results[0].geometry.location.lng)
+      
+    })
+    // this.gigService
+    //   .addShow(newShow, form.form.value.address)
+    //   .subscribe((response: any) => {
+    //     // form.reset();
+    //   });
   };
 }
