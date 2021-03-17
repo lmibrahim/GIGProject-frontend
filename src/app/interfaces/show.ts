@@ -3,5 +3,6 @@ export interface Show {
   title: string;
   start: number;
   description: string;
-  address: string;
+  // address: string;
+  location?: any[];
 }

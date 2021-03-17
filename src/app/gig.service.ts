@@ -9,6 +9,7 @@ import { Show } from './interfaces/show';
 export class GigService {
   predictHQEventsURL: string = 'https://api.predicthq.com/v1/events/';
   baseURL: string = 'http://localhost:3000/diyshows';
+  googleURL: string = 'https://maps.googleapis.com/maps/api/geocode/json';
 
   constructor(private http: HttpClient) {}
 
@@ -34,9 +35,13 @@ export class GigService {
     return this.http.get(this.baseURL);
   };
 
-  addShow = (show: Show): any => {
+  addShow = (show: Show, location: string): any => {
     console.log(show);
-
+    console.log(location);
+    let formatted: string;
+    formatted = location.replace('\s', '+');
+    console.log(formatted);
+    console.log(this.geoCoding(formatted));
     return this.http.post(`${this.baseURL}`, show);
   };
 
@@ -55,8 +60,14 @@ export class GigService {
       },
     });
   };
-  //   getAllGigs = (): any => {
-  //     this.getGig();
-  //     this.getDiyGig();
-  //   };
+
+  geoCoding = (address: string): any => {
+    console.log('geocoding');
+    return this.http.get(this.googleURL, {
+      params: {
+        address: address,
+        key: `AIzaSyCJ_i0zbrUPBpEeYAOVKQqTjeUwZjAtpr0`,
+      },
+    });
+  };
 }
