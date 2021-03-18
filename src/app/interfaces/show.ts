@@ -6,7 +6,7 @@ export interface Show {
   start: number;
   description: string;
   address: string;
-  lat: number;
-  lng: number;
-  location?: any[];
+  lat?: number;
+  lng?: number;
+  location?: [lat: number, lng: number];
 }
