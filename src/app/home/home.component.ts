@@ -89,7 +89,6 @@ export class HomeComponent implements OnInit {
   };
 
   updateSearch = () => {
-    console.log(`yooo`);
     this.filteredResults = this.filterSearch();
     return this.filteredResults;
   };

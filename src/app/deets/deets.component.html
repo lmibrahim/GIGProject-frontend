@@ -1,6 +1,15 @@
 <div class="map-div">
   <h3 class="map-header">Map of the area</h3>
-  <google-map></google-map>
+  <google-map>
+    <map-marker
+      *ngFor="let marker of markers"
+      [position]="marker.position"
+      [label]="marker.label"
+      [title]="marker.title"
+      [options]="marker.options"
+    >
+    </map-marker>
+  </google-map>
 </div>
 
 <div class="info-div">
