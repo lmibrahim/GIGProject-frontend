@@ -21,18 +21,27 @@ export class NewShowComponent implements OnInit {
   onSubmit = (form: NgForm): void => {
     console.log('NEW SHOW??');
     console.log(form);
-    let newShow: Show = form.form.value;
-    // newShow.location = [0, 0];
-    this.gigService.geoCoding(form.form.value.address).subscribe((response:any)=>{
-      console.log(response);
-      console.log(response.results[0].geometry.location.lat);
-      console.log(response.results[0].geometry.location.lng)
-      
-    })
-    // this.gigService
-    //   .addShow(newShow, form.form.value.address)
-    //   .subscribe((response: any) => {
-    //     // form.reset();
-    //   });
+    let newShow: Show = {
+      id: form.form.value.id,
+      title: form.form.value.title,
+      start: form.form.value.start,
+      description: form.form.value.description,
+      address: form.form.value.address,
+      lat: 0,
+      lng: 0,
+    };
+
+    this.gigService
+      .geoCoding(form.form.value.address)
+      .subscribe((response: any) => {
+        //we need to add lat and long response to newShow
+        console.log(response);
+        newShow.lat = response.results[0].geometry.location.lat;
+        newShow.lng = response.results[0].geometry.location.lng;
+        this.gigService.addShow(newShow).subscribe((response: any) => {
+          return response;
+          form.reset();
+        });
+      });
   };
 }

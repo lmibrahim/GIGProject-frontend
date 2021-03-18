@@ -35,14 +35,12 @@ export class GigService {
     return this.http.get(this.baseURL);
   };
 
-  addShow = (show: Show, location: string): any => {
-    console.log(show);
-    console.log(location);
-    let formatted: string;
-    formatted = location.replace('\s', '+');
-    console.log(formatted);
-    console.log(this.geoCoding(formatted));
-    return this.http.post(`${this.baseURL}`, show);
+  addShow = (show: Show): any => {
+    // let formatted: string;
+    // formatted = location.replace('s', '+');
+    // console.log(formatted);
+    // console.log(this.geoCoding(formatted));
+    return this.http.post(this.baseURL, show);
   };
 
   getTheGig = (id: string): any => {

@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GigService } from '../gig.service';
 import { Show } from '../interfaces/show';
-import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-deets',
@@ -10,6 +9,7 @@ import { HomeComponent } from '../home/home.component';
   styleUrls: ['./deets.component.css'],
 })
 export class DeetsComponent implements OnInit {
+  markers: any[] = [];
   show!: Show;
 
   constructor(private route: ActivatedRoute, private gigService: GigService) {}
@@ -52,7 +52,25 @@ export class DeetsComponent implements OnInit {
       // else if (this.show.entities[0].formatted_address) {
       //   console.log();
       // }
+      console.log('df');
+      console.log(this.markers);
+      console.log(this.show.lat);
+      this.markers.push({
+        position: {
+          lat: this.show.lat,
+          lng: this.show.lng,
+        },
+        label: {
+          color: 'red',
+          text: 'Marker label ' + (this.markers.length + 1),
+        },
+        title: 'Marker title ' + (this.markers.length + 1),
+        info: 'Marker info ' + (this.markers.length + 1),
+        options: { animation: google.maps.Animation.BOUNCE },
+      });
+      console.log(this.markers);
     });
+
     if (!this.show || this.show.title.match('')) {
       this.gigService.getTheOtherGig(id).subscribe((response: any) => {
         console.log(response);
@@ -60,11 +78,10 @@ export class DeetsComponent implements OnInit {
       });
     }
   };
-
-  // getAndSetMap = (address: string): void => {
-  //   this.gigService.geoCoding(address).subscribe((response: any) => {
-  //     console.log(response);
-  //     this.show.address;
-  //   });
-  // };
 }
+// getAndSetMap = (address: string): void => {
+//   this.gigService.geoCoding(address).subscribe((response: any) => {
+//     console.log(response);
+//     this.show.address;
+//   });
+// };
