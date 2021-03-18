@@ -68,4 +68,10 @@ export class GigService {
       },
     });
   };
+
+
+  updateShow=(id:number):void => {
+    console.log(` ${this.baseURL}/${id}`)
+    this.http.put<any>(`${this.baseURL}/${id}`, '')
+  }
 }

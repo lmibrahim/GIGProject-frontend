@@ -9,4 +9,6 @@ export interface Show {
   lat?: number;
   lng?: number;
   location?: [lat: number, lng: number];
+  display?: boolean
+  brand_safe?:boolean
 }
