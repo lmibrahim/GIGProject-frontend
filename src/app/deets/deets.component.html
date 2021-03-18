@@ -1,6 +1,6 @@
 <div class="map-div">
   <h3 class="map-header">Map of the area</h3>
-  <google-map>
+  <google-map class="map" [center]="center">
     <map-marker
       *ngFor="let marker of markers"
       [position]="marker.position"
@@ -11,12 +11,15 @@
     </map-marker>
   </google-map>
 </div>
-
+<button class="req-info">Request Info</button>
 <div class="info-div">
   <h3 class="header">Deets</h3>
   <h4 class="show-title">{{ show?.title }}</h4>
   <p class="start-time">{{ show?.start }}</p>
   <p class="info">{{ show?.description }}</p>
+  <p class="lat">{{ show?.lat }}</p>
+  <p class="lng">{{ show?.lng }}</p>
+
   <!-- <p class="show-address">{{ show?.address }}</p> -->
 
   <div class="help-container"></div>
