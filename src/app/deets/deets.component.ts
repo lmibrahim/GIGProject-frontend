@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter,ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GigService } from '../gig.service';
 import { Show } from '../interfaces/show';
@@ -9,10 +9,15 @@ import { Show } from '../interfaces/show';
   styleUrls: ['./deets.component.css'],
 })
 export class DeetsComponent implements OnInit {
+
+@Output() requestEvent= new EventEmitter<boolean>();
+
   markers: any[] = [];
   show!: Show;
   map!: google.maps.Map;
   center!: google.maps.LatLngLiteral;
+
+
 
   constructor(private route: ActivatedRoute, private gigService: GigService) {}
 
@@ -109,10 +114,13 @@ export class DeetsComponent implements OnInit {
       console.log(this.show);
     }
   };
+
+
+  showDetails = (id:number):void => {
+    console.log('changing false to true');
+    this.show.display= !this.show.display
+    this.gigService.updateShow(id)
+
+  }
 }
-// getAndSetMap = (address: string): void => {
-//   this.gigService.geoCoding(address).subscribe((response: any) => {
-//     console.log(response);
-//     this.show.address;
-//   });
-// };
+
