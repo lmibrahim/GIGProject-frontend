@@ -19,8 +19,6 @@ export class NewShowComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit = (form: NgForm): void => {
-    console.log('NEW SHOW??');
-    console.log(form);
     let newShow: Show = {
       id: form.form.value.id,
       title: form.form.value.title,
@@ -35,7 +33,6 @@ export class NewShowComponent implements OnInit {
       .geoCoding(form.form.value.address)
       .subscribe((response: any) => {
         //we need to add lat and long response to newShow
-        console.log(response);
         newShow.lat = response.results[0].geometry.location.lat;
         newShow.lng = response.results[0].geometry.location.lng;
         this.gigService.addShow(newShow).subscribe((response: any) => {

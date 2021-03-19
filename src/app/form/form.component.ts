@@ -14,7 +14,6 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {}
 
   emitTitle = (form: NgForm) => {
-    console.log(form);
     this.titleEvent.emit(form);
   };
 }

@@ -14,7 +14,6 @@ export class GigService {
   constructor(private http: HttpClient) {}
 
   getGig = (): any => {
-    console.log('HI');
     let params: any = {
       category: 'concerts',
       'place.scope': '4990729',
@@ -30,8 +29,6 @@ export class GigService {
   };
 
   getDiyGig = (): any => {
-    console.log('whzzzzzzzup');
-
     return this.http.get(this.baseURL);
   };
 
@@ -60,7 +57,6 @@ export class GigService {
   };
 
   geoCoding = (address: string): any => {
-    console.log('geocoding');
     return this.http.get(this.googleURL, {
       params: {
         address: address,
@@ -69,9 +65,8 @@ export class GigService {
     });
   };
 
-
-  updateShow=(id:number):void => {
-    console.log(` ${this.baseURL}/${id}`)
-    this.http.put<any>(`${this.baseURL}/${id}`, '')
-  }
+  updateShow = (id: number): any => {
+    console.log(`${this.baseURL}/${id}`);
+    return this.http.put(`${this.baseURL}/${id}`, {});
+  };
 }
