@@ -13,6 +13,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  //emitting the whole form to the parent component (home)
   emitTitle = (form: NgForm) => {
     this.titleEvent.emit(form);
   };

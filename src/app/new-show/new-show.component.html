@@ -1,3 +1,5 @@
+<!-- ngModel allows us to make use of data input by the user to populate more diy shows -->
+
 <form class="form" #newShow="ngForm" (ngSubmit)="onSubmit(newShow)">
   <label class="label" for="title">Name of Show</label>
   <input class="input" type="text" name="title" id="title" ngModel />

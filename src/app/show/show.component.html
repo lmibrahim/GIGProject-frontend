@@ -1,13 +1,11 @@
-<li>
+<li class="show-container">
   <div>
-    <p>{{ allGigResultsRef?.title }}</p>
+    <p class="show-title">{{ allGigResultsRef?.title }}</p>
     <p>{{ allGigResultsRef?.start }}</p>
     <p>{{ allGigResultsRef?.description }}</p>
-    <!-- <p>{{ allGigResultsRef?.address }}</p> -->
-    <button (click)="showDetails(allGigResultsRef.id)">deets</button>
-    <!-- routerLink="" -->
-  </div>
-  <div>
-    <p></p>
+
+    <button (click)="showDetails(allGigResultsRef.id)" class="button">
+      Deets
+    </button>
   </div>
 </li>

@@ -1,0 +1,14 @@
+.show-container {
+  margin: 15px;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #fb8500;
+}
+
+.show-title {
+  color: #219ebc;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

@@ -1,13 +1,13 @@
+<!-- ngModel allows us to make use of data input by the user to search through all our shows -->
+
 <form class="form" #searchForm="ngForm" (ngSubmit)="emitTitle(searchForm)">
   <label class="label" for="title">Search shows:</label>
   <input class="input" type="text" name="title" id="title" ngModel />
   <label class="label" for="showType">Show Type:</label>
   <select class="input" name="showType" id="showType" ngModel>
-   
     <option value="all">All shows</option>
     <option value="diy">DIY</option>
     <option value="public">Public</option>
-    
   </select>
   <label class="label" for="date">Search by date:</label>
   <input class="input" type="date" name="date" id="date" ngModel />
