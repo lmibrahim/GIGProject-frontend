@@ -1,5 +1,5 @@
 <!-- ngModel allows us to make use of data input by the user to populate more diy shows -->
-
+ <div class="form-container">
 <form class="form" #newShow="ngForm" (ngSubmit)="onSubmit(newShow)">
   <label class="label" for="title">Name of Show</label>
   <input class="input" type="text" name="title" id="title" ngModel />
@@ -20,6 +20,9 @@
   <label class="label" for="address">Address</label>
   <input class="input" type="text" name="address" id="address" ngModel />
 
-  <button class="button">Add Another Gig</button>
-  <button class="button" routerLink="/home">Submit</button>
+  <div class="button-container">
+  <button class="button">Add Gig</button>
+  </div>
+
 </form>
+</div>
