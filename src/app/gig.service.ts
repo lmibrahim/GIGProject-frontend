@@ -13,6 +13,7 @@ export class GigService {
 
   constructor(private http: HttpClient) {}
 
+  //get public shows
   getGig = (): any => {
     let params: any = {
       category: 'concerts',
@@ -28,10 +29,12 @@ export class GigService {
     });
   };
 
+  // get diy shows
   getDiyGig = (): any => {
     return this.http.get(this.baseURL);
   };
 
+  //add a show to the array/and diy database
   addShow = (show: Show): any => {
     // let formatted: string;
     // formatted = location.replace('s', '+');
@@ -40,10 +43,12 @@ export class GigService {
     return this.http.post(this.baseURL, show);
   };
 
+  //get a specific diy show
   getTheGig = (id: string): any => {
     return this.http.get(`${this.baseURL}/${id}`);
   };
 
+  //get a specific public show
   getTheOtherGig = (id: string): any => {
     let params: any = {
       id: id,
@@ -65,6 +70,7 @@ export class GigService {
     });
   };
 
+  //update specific diy show
   updateShow = (id: number): any => {
     console.log(`${this.baseURL}/${id}`);
     return this.http.put(`${this.baseURL}/${id}`, {});

@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   searchResultType: string = '';
   searchResultDate: string = '';
 
+  //direct injection to access the server, also imported above^^
   constructor(private gigService: GigService, private router: Router) {}
 
   ngOnInit(): void {
@@ -48,8 +49,6 @@ export class HomeComponent implements OnInit {
     this.searchResultDate = form.form.value.date;
   };
 
-
-  
   filterSearch = (): any => {
     if (this.searchResultTitle) {
       return this.allGigResults.filter((item: any) => {
@@ -63,7 +62,7 @@ export class HomeComponent implements OnInit {
   };
 
   //FILTER FOR DIY, PUBLIC & ALL
-  //all,diy and public values are from the formHTML. If user sets search type to diy/public it looks through the limited array using its unique values. eg; brand_safe. 
+  //all,diy and public values are from the formHTML. If user sets search type to diy/public it looks through the limited array using its unique values. eg; brand_safe.
   filterType = (): any => {
     if (this.searchResultType === 'all') {
       return this.allGigResults;
@@ -106,7 +105,6 @@ export class HomeComponent implements OnInit {
     this.filteredResults = this.filterDate();
     return this.filteredResults;
   };
-
 
   //CALLING THIS IN HOME HTML NGFOR
   //compares two arrays and only returns the matching result(s)

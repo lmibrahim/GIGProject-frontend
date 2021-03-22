@@ -8,6 +8,7 @@ import { Show } from '../interfaces/show';
   styleUrls: ['./show.component.css'],
 })
 export class ShowComponent implements OnInit {
+  // allows us to get information from the parent component (home)
   @Input() allGigResultsRef!: Show;
 
   constructor(private router: Router) {}

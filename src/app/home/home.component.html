@@ -4,11 +4,11 @@
 
 <!-- <google-map></google-map> -->
 
-<!-- //SearchGig method from home component -->
+<!-- updatedResults method from home component, allGigResultsRef is one of the shows bc of the binding [] =""
+ -->
 <ul>
   <app-show
     *ngFor="let show of updatedResults()"
     [allGigResultsRef]="show"
   ></app-show>
 </ul>
-

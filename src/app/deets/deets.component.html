@@ -1,7 +1,5 @@
-
 <div class="map-div" *ngIf="show?.display || show?.brand_safe">
-  <h3 class="map-header">Map of the area</h3>
-  <google-map class="map" [center]="center">
+  <google-map class="map" [center]="center" [height]="300" [width]="300">
     <map-marker
       *ngFor="let marker of markers"
       [position]="marker.position"
@@ -12,13 +10,18 @@
     </map-marker>
   </google-map>
 </div>
-<button class="req-info" (click)="showDetails(show.id)" > Request Info</button>
+<button
+  class="req-info"
+  (click)="showDetails(show.id)"
+  *ngIf="!show?.display && !show?.brand_safe"
+>
+  Request Info
+</button>
 <div class="info-div">
   <h3 class="header">Deets</h3>
   <h4 class="show-title">{{ show?.title }}</h4>
   <p class="start-time">{{ show?.start }}</p>
   <p class="info">{{ show?.description }}</p>
-
 
   <!-- <p class="show-address">{{ show?.address }}</p> -->
 

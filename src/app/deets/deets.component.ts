@@ -74,17 +74,15 @@ export class DeetsComponent implements OnInit {
             lng: this.show.lng,
           },
           label: {
-            color: 'red',
-            text: 'Marker label ' + (this.markers.length + 1),
+            color: 'orange',
+            text: this.show.title,
           },
           title: 'Marker title ' + (this.markers.length + 1),
           info: 'Marker info ' + (this.markers.length + 1),
           options: { animation: google.maps.Animation.BOUNCE },
         });
       });
-    }
-    //// VVVVV  BIG OL QUESTION MARK ON THIS PUPPY RIGHT HERE   VVVVV
-    else {
+    } else {
       this.gigService.getTheOtherGig(id).subscribe((response: any) => {
         this.show = response.results[0];
         let num1: number = this.show.location?.[1]!;
@@ -99,10 +97,10 @@ export class DeetsComponent implements OnInit {
             lng: this.show.location?.[0],
           },
           label: {
-            color: 'red',
+            color: 'orange',
             text: 'Marker label ' + (this.markers.length + 1),
           },
-          title: 'Marker title ' + (this.markers.length + 1),
+          title: this.show.title,
           info: 'Marker info ' + (this.markers.length + 1),
           options: { animation: google.maps.Animation.BOUNCE },
         });
