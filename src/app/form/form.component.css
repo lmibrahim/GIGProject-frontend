@@ -12,3 +12,9 @@
 .button {
   margin: 10px;
 }
+
+.submitButton {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
