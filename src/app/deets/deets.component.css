@@ -1,5 +1,5 @@
 .page-div {
-  height: 80vh;
+  height: 90vh;
   bottom: 0px;
   display: flex;
   justify-content: center;
@@ -7,10 +7,16 @@
   align-items: center;
 }
 .map-div {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
+
+/* .map {
+  height: 450px;
+  width: 300px;
+} */
 
 .info-div {
   margin: 15px;
@@ -38,4 +44,43 @@
 .start-time,
 .info {
   color: #ffb703;
+}
+
+.map-div-desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .map-div {
+    display: none;
+  }
+
+  .map-div-desktop {
+    flex: 1;
+    display: initial;
+    padding-left: 80px;
+  }
+
+  .info-div {
+    flex: 1;
+    width: 500px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 3.5rem;
+  }
+
+  .show-title {
+    font-size: 1.5rem;
+  }
+
+  .start-time {
+    font-size: 1.2rem;
+  }
 }
