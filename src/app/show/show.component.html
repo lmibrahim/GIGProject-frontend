@@ -1,11 +1,16 @@
 <li class="show-container">
-  <div>
+  <div class="show-info">
+    <div class="show-details">
     <p class="show-title">{{ allGigResultsRef?.title }}</p>
     <p>{{ allGigResultsRef?.start | date: "short" }}</p>
     <p>{{ allGigResultsRef?.description }}</p>
+  </div>
 
+    <div>
     <button (click)="showDetails(allGigResultsRef.id)" class="button">
       Deets
     </button>
+  </div>
+  
   </div>
 </li>

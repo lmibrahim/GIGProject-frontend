@@ -11,6 +11,21 @@
       </map-marker>
     </google-map>
   </div>
+<!-- 
+  DESKTOP MAP -->
+  <div class="map-div-desktop" *ngIf="show?.display || show?.brand_safe">
+    <google-map class="map" [center]="center" [height]="650" [width]="600">
+      <map-marker
+        *ngFor="let marker of markers"
+        [position]="marker.position"
+        [label]="marker.label"
+        [title]="marker.title"
+        [options]="marker.options"
+      >
+      </map-marker>
+    </google-map>
+  </div>
+
   <div class="info-div">
     <h3 class="header">Deets</h3>
     <h4 class="show-title">{{ show?.title }}</h4>
@@ -26,6 +41,6 @@
     </button>
     <!-- <p class="show-address">{{ show?.address }}</p> -->
 
-    <div class="help-container"></div>
+  
   </div>
 </div>
