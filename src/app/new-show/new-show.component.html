@@ -1,28 +1,36 @@
 <!-- ngModel allows us to make use of data input by the user to populate more diy shows -->
- <div class="form-container">
-<form class="form" #newShow="ngForm" (ngSubmit)="onSubmit(newShow)">
-  <label class="label" for="title">Name of Show</label>
-  <input class="input" type="text" name="title" id="title" ngModel />
+<div class="header-container">
+  <h3 class="header">Add your show!</h3>
+</div>
+<div class="form-container">
+  <form class="form" #newShow="ngForm" (ngSubmit)="onSubmit(newShow)">
+    <label class="label" for="title">Name of Show:</label>
+    <input class="input" type="text" name="title" id="title" ngModel />
 
-  <label class="label" for="start">Show Time</label>
-  <input class="input" type="datetime-local" name="start" id="start" ngModel />
+    <label class="label" for="start">Show Time:</label>
+    <input
+      class="input"
+      type="datetime-local"
+      name="start"
+      id="start"
+      ngModel
+    />
 
-  <label class="label" for="description"> Description</label>
-  <textarea
-    class="input"
-    name="description"
-    id="description"
-    cols="30"
-    rows="10"
-    ngModel
-  ></textarea>
+    <label class="label" for="description"> Description:</label>
+    <textarea
+      class="input"
+      name="description"
+      id="description"
+      cols="30"
+      rows="10"
+      ngModel
+    ></textarea>
 
-  <label class="label" for="address">Address</label>
-  <input class="input" type="text" name="address" id="address" ngModel />
+    <label class="label" for="address">Address:</label>
+    <input class="input" type="text" name="address" id="address" ngModel />
 
-  <div class="button-container">
-  <button class="button">Add Gig</button>
-  </div>
-
-</form>
+    <div class="button-container">
+      <button class="button">Add Gig</button>
+    </div>
+  </form>
 </div>

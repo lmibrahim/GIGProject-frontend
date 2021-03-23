@@ -1,3 +1,11 @@
+.page-div {
+  height: 80vh;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 .map-div {
   margin-top: 20px;
   display: flex;
@@ -5,19 +13,21 @@
 }
 
 .info-div {
-  margin: 10px;
+  margin: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-
+.req-info {
+  margin: 20px;
+}
 .header {
   color: #219ebc;
   font-weight: bold;
   border-bottom: 1px solid #fb8500;
   padding: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 1.5rem;
 }
 

@@ -1,0 +1,15 @@
+.about-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.about-header {
+  margin-top: 30px;
+}
+.about-content {
+  margin: 20px;
+}
+.p {
+  margin: 20px;
+}

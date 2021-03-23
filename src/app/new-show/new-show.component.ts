@@ -32,6 +32,7 @@ export class NewShowComponent implements OnInit {
     this.gigService
       .geoCoding(form.form.value.address)
       .subscribe((response: any) => {
+        console.log(response);
         //we need to add lat and long response to newShow
         newShow.lat = response.results[0].geometry.location.lat;
         newShow.lng = response.results[0].geometry.location.lng;
