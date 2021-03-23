@@ -2,3 +2,15 @@
   display: flex;
   justify-content: center;
 }
+.header-container {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px 25px 0px;
+}
+
+.label {
+  margin: 10px 0 10px 0;
+}
+.input {
+  margin: 10px 0 10px 0;
+}
