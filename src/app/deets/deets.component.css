@@ -19,7 +19,7 @@
 } */
 
 .info-div {
-  margin: 15px;
+  /* margin: 15px; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -54,6 +54,8 @@
   .page-div {
     display: flex;
     flex-direction: row;
+    margin-top: 5px;
+    height: 75vh;
   }
 
   .map-div {

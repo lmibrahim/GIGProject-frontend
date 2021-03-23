@@ -11,10 +11,10 @@
       </map-marker>
     </google-map>
   </div>
-<!-- 
+  <!-- 
   DESKTOP MAP -->
   <div class="map-div-desktop" *ngIf="show?.display || show?.brand_safe">
-    <google-map class="map" [center]="center" [height]="650" [width]="600">
+    <google-map class="map" [center]="center" [height]="555" [width]="700">
       <map-marker
         *ngFor="let marker of markers"
         [position]="marker.position"
@@ -40,7 +40,5 @@
       Request Info
     </button>
     <!-- <p class="show-address">{{ show?.address }}</p> -->
-
-  
   </div>
 </div>

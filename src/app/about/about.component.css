@@ -7,9 +7,63 @@
 .about-header {
   margin-top: 30px;
 }
+
+.header {
+  color: #ffb703;
+  font-size: 2rem;
+}
 .about-content {
-  margin: 20px;
+  margin: 10px;
 }
 .p {
-  margin: 20px;
+  margin: 10px;
+}
+
+.developers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.developers {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.dev-card {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headshot {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.dev-name {
+  margin: 10px 0px;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.dev-link {
+  color: white;
+}
+
+.dev-link:hover {
+  color: #ffb703;
+}
+
+@media only screen and (min-width: 768px) {
+  .headshot {
+    width: 200px;
+    height: 200px;
+  }
 }
