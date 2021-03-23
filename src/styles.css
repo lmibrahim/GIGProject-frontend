@@ -39,6 +39,15 @@ html {
   box-sizing: border-box;
 }
 
+.link {
+  text-decoration: none;
+  color: #219ebc;
+}
+
+.link:hover {
+  color: #ffb703;
+}
+
 /* LOOK BACK */
 /* #showType {
   width: 104%;
