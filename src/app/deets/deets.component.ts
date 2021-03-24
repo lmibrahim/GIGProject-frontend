@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GigService } from '../gig.service';
+import { Post } from '../interfaces/post';
 import { Show } from '../interfaces/show';
 
 @Component({
@@ -18,17 +19,25 @@ export class DeetsComponent implements OnInit {
   // @Output() requestEvent= new EventEmitter<boolean>();
 
   markers: any[] = [];
+  posts: Post[] = [];
   show!: Show;
   map!: google.maps.Map;
   center!: google.maps.LatLngLiteral;
+  url: string = '';
 
   constructor(private route: ActivatedRoute, private gigService: GigService) {}
 
   ngOnInit(): void {
+    this.route.url.subscribe((response) => {
+      console.log(response[0].path);
+      this.url = response[0].path;
+    });
+
     this.route.paramMap.subscribe((response) => {
       let id: string | null = response.get('id');
       if (id) {
         this.getAndSetShow(id);
+        this.getAndSetPosts(id);
       }
       //   console.log(this.show);
       // if (this.show.address) {
@@ -114,6 +123,12 @@ export class DeetsComponent implements OnInit {
     this.gigService.updateShow(id).subscribe((response: any) => {
       console.log(response);
       location.reload();
+    });
+  };
+
+  getAndSetPosts = (id: string) => {
+    this.gigService.getPostsById(parseInt(id)).subscribe((response: any) => {
+      this.posts = response;
     });
   };
 }

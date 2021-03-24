@@ -1,0 +1,28 @@
+.post-card {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 2px;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.post-btn {
+  margin-top: 15px;
+  width: 100%;
+  height: 40px;
+}
