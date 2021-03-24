@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { secret } from './secrets';
 import { Show } from './interfaces/show';
 import { Post } from './interfaces/post';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GigService {
   predictHQEventsURL: string = 'https://api.predicthq.com/v1/events/';
-  baseURL: string = 'http://localhost:3000';
+  baseURL: string = environment.apiBaseUrl;
   googleURL: string = 'https://maps.googleapis.com/maps/api/geocode/json';
 
   constructor(private http: HttpClient) {}
