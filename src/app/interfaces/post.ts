@@ -4,5 +4,5 @@ export interface Post {
   poster: string;
   post: string;
   show_id: number;
-  // time_stamp: string;
+  time_stamp: string;
 }
