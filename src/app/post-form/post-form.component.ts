@@ -40,7 +40,7 @@ export class PostFormComponent implements OnInit {
     }
     this.gigService.addPost(newPost).subscribe((response: any) => {
       form.reset();
-      // location.reload();
+      location.reload();
     });
   };
 }
