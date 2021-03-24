@@ -6,10 +6,48 @@ body {
 .newShowButton {
   justify-content: center;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .search {
   margin-top: 20px;
 }
+.shows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+.theshows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+ul {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.parallax {
+  /* The image used */
+  background: url("/assets/Collage_Parra.png");
+
+  /* Set a specific height */
+  min-height: 300px;
+  width: 100%;
+  z-index: 4;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media only screen and (min-width: 768px) {
 }

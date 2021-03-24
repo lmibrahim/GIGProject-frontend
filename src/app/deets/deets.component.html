@@ -1,6 +1,6 @@
 <div class="page-div">
   <div class="map-div" *ngIf="show?.display || show?.brand_safe">
-    <google-map class="map" [center]="center" [height]="450" [width]="370">
+    <google-map class="map" [center]="center" [height]="450" [width]="350">
       <map-marker
         *ngFor="let marker of markers"
         [position]="marker.position"
@@ -40,11 +40,13 @@
       Request Info
     </button>
     <!-- <p class="show-address">{{ show?.address }}</p> -->
+
+    <div>
+      <app-post-form *ngIf="show?.display && !show?.brand_safe"></app-post-form>
+    </div>
+
+    <ul class="post-container" *ngIf="show?.display && !show?.brand_safe">
+      <app-posts *ngFor="let post of posts" [postRef]="post"></app-posts>
+    </ul>
   </div>
-  <div>
-    <app-post-form></app-post-form>
-  </div>
-  <ul class="post-container">
-    <app-posts *ngFor="let post of posts" [postRef]="post"></app-posts>
-  </ul>
 </div>

@@ -3,14 +3,18 @@
 <div class="newShowButton">
   <button class="button" routerLink="/new-show">Add New Show</button>
 </div>
+<div class="parallax"></div>
 
 <!-- <google-map></google-map> -->
 
 <!-- updatedResults method from home component, allGigResultsRef is one of the shows bc of the binding [] =""
  -->
-<ul>
-  <app-show
-    *ngFor="let show of updatedResults()"
-    [allGigResultsRef]="show"
-  ></app-show>
-</ul>
+<div class="shows">
+  <ul>
+    <app-show
+      class="theshows"
+      *ngFor="let show of updatedResults()"
+      [allGigResultsRef]="show"
+    ></app-show>
+  </ul>
+</div>
