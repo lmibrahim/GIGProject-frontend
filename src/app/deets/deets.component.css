@@ -1,5 +1,5 @@
 .page-div {
-  height: 90vh;
+  height: 100vh;
   bottom: 0px;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 .map-div {
-  margin-top: 30px;
+  margin-top: 700px;
   display: flex;
   justify-content: center;
   padding-top: 20px;
@@ -48,6 +48,12 @@
 
 .map-div-desktop {
   display: none;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0px 40px;
 }
 
 @media only screen and (min-width: 768px) {

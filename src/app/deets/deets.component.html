@@ -41,4 +41,10 @@
     </button>
     <!-- <p class="show-address">{{ show?.address }}</p> -->
   </div>
+  <div>
+    <app-post-form></app-post-form>
+  </div>
+  <ul class="post-container">
+    <app-posts *ngFor="let post of posts" [postRef]="post"></app-posts>
+  </ul>
 </div>

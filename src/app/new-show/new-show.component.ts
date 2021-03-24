@@ -37,8 +37,8 @@ export class NewShowComponent implements OnInit {
         newShow.lat = response.results[0].geometry.location.lat;
         newShow.lng = response.results[0].geometry.location.lng;
         this.gigService.addShow(newShow).subscribe((response: any) => {
-          return response;
           form.reset();
+          return response;
         });
       });
   };

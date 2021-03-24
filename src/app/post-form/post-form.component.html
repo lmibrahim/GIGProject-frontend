@@ -1,0 +1,13 @@
+<form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)" class="post-card">
+  <div class="inputs">
+    <label for="memo">Memo: </label>
+    <input type="memo" name="memo" id="memo" ngModel />
+    <label for="poster">Posted By: </label>
+    <input type="text" name="poster" id="poster" ngModel />
+  </div>
+  <div class="textarea">
+    <label for="post">New Post: </label>
+    <textarea name="post" id="post" cols="40" rows="4" ngModel></textarea>
+  </div>
+  <button class="post-btn button">Post!</button>
+</form>

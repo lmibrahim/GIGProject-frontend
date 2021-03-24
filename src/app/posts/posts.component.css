@@ -1,0 +1,24 @@
+.post-card {
+  list-style-type: none;
+  text-align: start;
+  display: flex;
+  padding: 10px;
+  margin: 10px 0px;
+  border: 1px solid #fb8500;
+  background-color: rgba(128, 128, 128, 0.261);
+  border-radius: 20px;
+}
+
+.memo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #219ebc;
+}
+
+.poster {
+  font-style: italic;
+}
+
+.post {
+  color: #ffb703;
+}

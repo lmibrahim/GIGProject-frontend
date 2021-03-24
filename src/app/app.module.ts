@@ -16,6 +16,8 @@ import { DeetsComponent } from './deets/deets.component';
 import { AboutComponent } from './about/about.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { PostFormComponent } from './post-form/post-form.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { CommonModule } from '@angular/common';
     PageNotFoundComponent,
     DeetsComponent,
     AboutComponent,
+    PostFormComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
