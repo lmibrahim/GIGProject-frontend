@@ -31,7 +31,7 @@ export class PostFormComponent implements OnInit {
       poster: form.form.value.poster,
       post: form.form.value.post,
       show_id: 0,
-      // time_stamp: `${new Date().getMonth()}/${new Date().getDate()}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getMinutes()}`,
+      time_stamp: `${new Date().getMonth()}/${new Date().getDate()}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getMinutes()}`,
     };
     console.log(form);
     console.log(newPost);
@@ -40,7 +40,7 @@ export class PostFormComponent implements OnInit {
     }
     this.gigService.addPost(newPost).subscribe((response: any) => {
       form.reset();
-      location.reload();
+      // location.reload();
     });
   };
 }
