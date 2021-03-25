@@ -33,7 +33,7 @@ ul {
   align-items: center;
   /* justify-content: center; */
 }
-.parallax {
+.parallax1 {
   /* The image used */
   background: url("/assets/Collage_Parra.png");
 
@@ -41,13 +41,27 @@ ul {
   min-height: 300px;
   width: 100%;
   z-index: 4;
-
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 @media only screen and (min-width: 768px) {
+  .parallax2 {
+    /* The image used */
+    background: url("/assets/Collage_Parra.png");
+
+    /* Set a specific height */
+    min-height: 300px;
+    width: 100%;
+    z-index: 4;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
