@@ -5,6 +5,7 @@
   display: flex;
   padding: 10px;
   border-bottom: 1px solid #fb8500;
+  width: 80%;
 }
 
 .show-title {
@@ -27,7 +28,7 @@
   }
   @media only screen and (min-width: 1200px) {
     .show-container {
-      width: 90%;
+      width: 80%;
     }
   }
 }

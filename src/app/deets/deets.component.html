@@ -26,7 +26,13 @@
     </google-map>
   </div>
 
+ <div class="house-art" *ngIf="!show?.display && !show?.brand_safe">
+    <img src="/../assets/GTTG-DEETS.png" alt="">
+ </div>
+
+ 
   <div class="info-div">
+    <div class="details">
     <h3 class="header">Deets</h3>
     <h4 class="show-title">{{ show?.title }}</h4>
     <p class="start-time">{{ show?.start | date: "short" }}</p>
@@ -45,8 +51,17 @@
       <app-post-form *ngIf="show?.display && !show?.brand_safe"></app-post-form>
     </div>
 
-    <ul class="post-container" *ngIf="show?.display && !show?.brand_safe">
+
+  
+  </div>
+</div>
+</div>
+
+<div class="post-holder">
+  <div class="post-holder2"></div>
+  <div class="post-holder3">
+ <ul class="post-container" *ngIf="show?.display && !show?.brand_safe">
       <app-posts *ngFor="let post of posts" [postRef]="post"></app-posts>
     </ul>
-  </div>
+ </div>
 </div>
