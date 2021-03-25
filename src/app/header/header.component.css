@@ -1,5 +1,5 @@
 .navbar {
-  margin: 5px 15px;
+  /* margin: 5px 15px; */
   padding: 20px 20px 6px 20px;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@
 .header {
   padding-bottom: 5px;
   width: 50%;
+  z-index: 5;
 }
 .collapse {
   margin: 0;
@@ -22,6 +23,13 @@
   list-style: none;
 }
 
+.header-background {
+  background: url("/../assets/GTTG Background.png");
+  /* width: 100vw;
+  height: 10vh; */
+  /* overflow-y: visible; */
+  top: 0;
+}
 @media only screen and (min-width: 768px) {
   .nav-item {
     font-size: 1.5rem;
