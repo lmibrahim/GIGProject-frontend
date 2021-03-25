@@ -1,7 +1,6 @@
 .form {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 .label {
   margin: 5px;

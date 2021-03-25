@@ -5,14 +5,7 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  /* position: relative; */
 }
-/* .map-div {
-  margin-top: 700px; 
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-}  */
 
 .map {
   margin: 10px;
@@ -21,16 +14,11 @@
 .house-art {
   display: initial;
   margin-top: 90px;
-  /* height: 300px;
-
-  width: auto;
-  justify-content: center; */
 }
 .house-art2 {
   display: none;
 }
 .info-div {
-  /* margin: 15px; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -71,19 +59,38 @@
 
 .post-holder {
   height: 100px;
-  top: 10vh;
-  position: relative;
+  top: 40vh;
+}
+
+@media only screen and (max-height: 640px) {
+  .post-holder3 {
+    margin-top: 280px;
+  }
+}
+
+@media only screen and (max-height: 700px) and (min-height: 641px) {
+  .post-holder3 {
+    margin-top: 225px;
+  }
+}
+@media only screen and (max-height: 800px) and (min-height: 701px) {
+  .post-holder3 {
+    margin-top: 165px;
+  }
+}
+
+@media only screen and (max-height: 880px) and (min-height: 801px) {
+  .post-holder3 {
+    margin-top: 65px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .page-div {
     display: flex;
     flex-direction: row;
-    /* margin-top: 80px; */
+
     height: 80vh;
-    /* justify-content: baseline;
-    align-content: center; */
-    /* align-items: baseline; */
   }
 
   .post-holder {
@@ -116,18 +123,11 @@
   .info-div {
     flex: 1;
     width: 500px;
-    /* position: relative; */
-    /* margin: 30px; */
 
     display: flex;
-    /* top: 9em; */
+
     text-align: center;
-    /* overflow-y: scroll; */
   }
-  /* 
-  .details {
-    position: absolute;
-  } */
 
   .header {
     font-size: 3.5rem;
