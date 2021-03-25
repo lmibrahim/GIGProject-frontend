@@ -3,10 +3,19 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-image: url("src/assets/squiggle.png");
+  background-repeat: repeat;
+  background-size: 200px;
 }
 .about-header {
   margin-top: 30px;
 }
+
+/* .squiggle {
+  background-image: url("src/assets/squiggle.png");
+  background-repeat: repeat;
+  z-index: -6;
+} */
 
 .header {
   color: #ffb703;
