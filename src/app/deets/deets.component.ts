@@ -16,8 +16,6 @@ import { Show } from '../interfaces/show';
   styleUrls: ['./deets.component.css'],
 })
 export class DeetsComponent implements OnInit {
-  // @Output() requestEvent= new EventEmitter<boolean>();
-
   markers: any[] = [];
   posts: Post[] = [];
   show!: Show;
@@ -39,18 +37,6 @@ export class DeetsComponent implements OnInit {
         this.getAndSetShow(id);
         this.getAndSetPosts(id);
       }
-      //   console.log(this.show);
-      // if (this.show.address) {
-      //   this.gigService
-      //     .geoCoding(this.show.address)
-      //     .subscribe((response: any) => {
-      //       console.log(response);
-      //       this.show.address;
-      //     });
-      // }
-      // else if (this.show.entities[0].formatted_address) {
-      //   console.log();
-      // }
     });
   }
 
@@ -58,18 +44,6 @@ export class DeetsComponent implements OnInit {
     if (id.length <= 3) {
       this.gigService.getTheGig(id).subscribe((response: any) => {
         this.show = response[0];
-
-        // if (this.show.address) {
-        //   this.gigService
-        //     .geoCoding(this.show.address)
-        //     .subscribe((response: any) => {
-        //       console.log(response);
-        //       this.show.address;
-        //     });
-        // }
-        // else if (this.show.entities[0].formatted_address) {
-        //   console.log();
-        // }
 
         let num1: number = this.show.lat!;
         let num2: number = this.show.lng!;
@@ -118,10 +92,7 @@ export class DeetsComponent implements OnInit {
   };
 
   showDetails = (id: number) => {
-    console.log('changing false to true');
-    // this.show.display= !this.show.display
     this.gigService.updateShow(id).subscribe((response: any) => {
-      console.log(response);
       location.reload();
     });
   };
