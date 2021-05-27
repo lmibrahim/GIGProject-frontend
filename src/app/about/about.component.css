@@ -6,19 +6,10 @@
   background-image: url("src/assets/squiggle.png");
   background-repeat: repeat;
   background-size: 200px;
-  /* margin-top: 50px; */
   height: 100%;
   bottom: 0px;
 }
-.about-header {
-  /* margin-top: 10px; */
-}
 
-/* .squiggle {
-  background-image: url("src/assets/squiggle.png");
-  background-repeat: repeat;
-  z-index: -6;
-} */
 .words-container {
   margin-top: 80px;
   display: flex;

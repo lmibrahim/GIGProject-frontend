@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ShowComponent } from './show/show.component';
 import { FormComponent } from './form/form.component';
-import { DetailsPageComponent } from './details-page/details-page.component';
 import { NewShowComponent } from './new-show/new-show.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DeetsComponent } from './deets/deets.component';
@@ -26,7 +25,6 @@ import { PostsComponent } from './posts/posts.component';
     HomeComponent,
     ShowComponent,
     FormComponent,
-    DetailsPageComponent,
     NewShowComponent,
     PageNotFoundComponent,
     DeetsComponent,

@@ -38,10 +38,6 @@ export class GigService {
 
   //add a show to the array/and diy database
   addShow = (show: Show): any => {
-    // let formatted: string;
-    // formatted = location.replace('s', '+');
-    // console.log(formatted);
-    // console.log(this.geoCoding(formatted));
     return this.http.post(`${this.baseURL}/diyshows`, show);
   };
 
