@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
   constructor(private gigService: GigService, private router: Router) {}
 
   ngOnInit(): void {
-    console.log('WORKIN');
+    // console.log('WORKIN');
     this.getAndSetGig();
     this.getAndSetDiyGig();
   }
-
+  //concat the gig information that comes from the external and internal api
   getAndSetGig = () => {
     console.log('hear ya');
     this.gigService.getGig().subscribe((response: any) => {
@@ -49,6 +49,7 @@ export class HomeComponent implements OnInit {
     this.searchResultDate = form.form.value.date;
   };
 
+  //filter by title
   filterSearch = (): any => {
     if (this.searchResultTitle) {
       return this.allGigResults.filter((item: any) => {
@@ -63,6 +64,7 @@ export class HomeComponent implements OnInit {
 
   //FILTER FOR DIY, PUBLIC & ALL
   //all,diy and public values are from the formHTML. If user sets search type to diy/public it looks through the limited array using its unique values. eg; brand_safe.
+  //filter by type
   filterType = (): any => {
     if (this.searchResultType === 'all') {
       return this.allGigResults;
@@ -81,6 +83,7 @@ export class HomeComponent implements OnInit {
     }
   };
 
+  //filter by date
   filterDate = (): any => {
     if (this.searchResultDate) {
       return this.allGigResults.filter((item: any) => {
